@@ -26,4 +26,8 @@ Yes. This function appends breakpoints (e.g. `/my/path/run.py:50`) to my `.py-br
   ```
 
 ## License
-This code is adapted from the Python code base (from pdb.py), license [here](https://www.python.org/download/releases/3.4.0/license/). There is also code from the PDB++ project (license shown as BSD [here](https://pypi.python.org/pypi/pdbpp/). Any code I've written/modified I release under the MIT and/or BSD license.
+This code is adapted from:
+1. The Python code base (from pdb.py), license [here](https://www.python.org/download/releases/3.4.0/license/). 
+2. The PDB++ project (license shown as BSD [here](https://pypi.python.org/pypi/pdbpp/). 
+
+Any code I've written/modified I release under the MIT and/or BSD license.
