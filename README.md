@@ -2,7 +2,7 @@
 A fork of [PDB++](https://bitbucket.org/antocuni/pdb/src) with the following objectives:
 
 1. Turn on 'sticky mode' by default.
-2. Add code to help store breakpoints in a file.
+2. Add code to help store breakpoints in a file, and have those breakpoints move forward in the code to the next valid line if the code changes.
 
 ## How do I store breakpoints in a file?
 Create a `.py-breakpoints` file in your home directory, and put the breakpoint text (what you would usually specify manually in a PDB debugging session) on separate lines.
