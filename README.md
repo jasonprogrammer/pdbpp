@@ -14,5 +14,16 @@ Example `~/.py-breakpoints` file:
 ## How do the breakpoints get initialized?
 Add an `import pdb; pdb.set_trace()` to the top of the script you're running. Once the set_trace() is called, the breakpoints will be read from the file and initialized.
 
+## Can I set a breakpoint from Emacs?
+Yes. This function appends breakpoints (e.g. `/my/path/run.py:50`) to my `.py-breakpoints` file:
+```
+(defun breakpoint-append()
+  (interactive)
+  (setq lnum (format-mode-line "%l"))
+  (setq bp (concat (buffer-file-name) ":" lnum "\n"))
+  (write-region bp nil "~/.py-breakpoints" 'append)
+  )
+  ```
+
 ## License
 This code is adapted from the Python code base (from pdb.py), license [here](https://www.python.org/download/releases/3.4.0/license/). There is also code from the PDB++ project (license shown as BSD [here](https://pypi.python.org/pypi/pdbpp/). Any code I've written/modified I release under the MIT and/or BSD license.
