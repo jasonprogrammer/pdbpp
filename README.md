@@ -1,7 +1,7 @@
 # pdbpp
 A fork of [PDB++](https://bitbucket.org/antocuni/pdb/src) with the following objectives:
 
-1. Turn on 'sticky mode' by default.
+1. Turn on 'sticky mode' by default (repaint the code on the screen at each step).
 2. Add code to help store breakpoints in a file, and have those breakpoints move forward in the code to the next valid line if the code changes.
 
 ## How do I install this?
