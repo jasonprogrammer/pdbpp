@@ -147,26 +147,7 @@ class DefaultConfig:
         pass
 
     def before_interaction_hook(self, pdb):
-        self.setup_breakpoints(pdb)
-
-    def setup_breakpoints(self, pdb):
-        """Changes to help store breakpoints in a file. pdb.set_trace() should be
-        called at the beginning of the entry script so that the breakpoints are
-        loaded.
-        """
-        breakpoints_path = os.path.expanduser('~') + '/.py-breakpoints'
-        if not os.path.exists(breakpoints_path):
-            pdb.stdout.write(".py-breakpoints not found in home directory")
-            return
-
-        with open(breakpoints_path) as bfile:
-            breakpoints = bfile.read().split("\n")
-
-        for breakpoint in breakpoints:
-            if not breakpoint:
-                continue
-            pdb.stdout.write("Setting breakpoint: {}\n".format(breakpoint))
-            pdb._set_moving_break(breakpoint)
+        pdb.setup_breakpoints()
 
 
 def setbgcolor(line, color):
@@ -470,6 +451,25 @@ class Pdb(pdb.Pdb, ConfigurableClass):
             self.error('Blank or comment')
             return -1
         return lineno
+
+    def setup_breakpoints(self):
+        """Changes to help store breakpoints in a file. pdb.set_trace() should be
+        called at the beginning of the entry script so that the breakpoints are
+        loaded.
+        """
+        breakpoints_path = os.path.expanduser('~') + '/.py-breakpoints'
+        if not os.path.exists(breakpoints_path):
+            print(".py-breakpoints not found in home directory")
+            return
+
+        with open(breakpoints_path) as bfile:
+            breakpoints = bfile.read().split("\n")
+
+        for breakpoint in breakpoints:
+            if not breakpoint:
+                continue
+            print("Setting breakpoint: {}\n".format(breakpoint))
+            self._set_moving_break(breakpoint)
 
     def _set_moving_break(self, arg, temporary = 0):
         """Attempt to set a breakpoint, and move the breakpoint if it's not on
@@ -1168,6 +1168,13 @@ def set_trace(frame=None, Pdb=Pdb, **kwds):
         del pdb.curframe
 
     pdb.set_trace(frame)
+
+def setup_breakpoints():
+    pdb = GLOBAL_PDB
+    if not pdb:
+        print('GLOBAL_PDB not defined')
+        return
+    pdb.setup_breakpoints()
 
 def cleanup():
     global GLOBAL_PDB
