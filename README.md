@@ -1,13 +1,13 @@
 ## What is PDB++?
-[PDB++](https://bitbucket.org/antocuni/pdb/src) is code that extends the Python debugger [PDB](https://docs.python.org/3/library/pdb.html). This is a project that extends PDB++.
+[PDB++](https://bitbucket.org/antocuni/pdb/src) is code that extends the Python debugger [PDB](https://docs.python.org/3/library/pdb.html). This project extends PDB++.
 
 ## Why this? 
-1. Turn on 'sticky mode' by default (repaint the code on the screen at each step).
+1. Turn on 'sticky mode' by default (repaint the code at each debugging step).
 2. Persist breakpoints to a file and load them when the first `pdb.set_trace()` is called. Also have the breakpoints auto-adjust to the next valid line if the code changes.
 
 ## How do I install this?
 1. [Install pdb++](https://pypi.python.org/pypi/pdbpp/). (e.g. `pip install pdbpp`).
-2. Copy the pdb.py file in this repository to your site-packages directory.
+2. Copy the pdb.py file in this repository to your `site-packages` directory (or manually change the file).
 
 ## How do I store breakpoints in a file?
 Create a `.py-breakpoints` file in your home directory, and put the breakpoint text (what you would usually specify manually in a PDB debugging session) on separate lines.
