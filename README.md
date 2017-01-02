@@ -1,5 +1,5 @@
 ## What is PDB++?
-[PDB++](https://bitbucket.org/antocuni/pdb/src) is code that extends the Python debugger [PDB](https://docs.python.org/3/library/pdb.html).
+[PDB++](https://bitbucket.org/antocuni/pdb/src) is code that extends the Python debugger [PDB](https://docs.python.org/3/library/pdb.html). This is a project that extends PDB++.
 
 ## Why this? 
 1. Turn on 'sticky mode' by default (repaint the code on the screen at each step).
