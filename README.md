@@ -1,8 +1,9 @@
-# pdbpp
-A fork of [PDB++](https://bitbucket.org/antocuni/pdb/src) with the following objectives:
+## What is PDB++?
+[PDB++](https://bitbucket.org/antocuni/pdb/src) is code that extends the Python debugger [PDB](https://docs.python.org/3/library/pdb.html).
 
+## Why this? 
 1. Turn on 'sticky mode' by default (repaint the code on the screen at each step).
-2. Add code to help store breakpoints in a file, and have those breakpoints move forward in the code to the next valid line if the code changes.
+2. Persist breakpoints to a file and load them when the first `pdb.set_trace()` is called. Also have the breakpoints auto-adjust to the next valid line if the code changes.
 
 ## How do I install this?
 1. [Install pdb++](https://pypi.python.org/pypi/pdbpp/). (e.g. `pip install pdbpp`).
