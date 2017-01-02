@@ -28,6 +28,7 @@ Yes. This function appends breakpoints (e.g. `/my/path/run.py:50`) to my `.py-br
   (write-region bp nil "~/.py-breakpoints" 'append)
   )
   ```
+If you're on Windows, you'll probably need to indicate the full path above (e.g. `c:/Users/BobSmith/.py-breakpoints`).
 
 ## Does this work on Windows?
 Yes, pdb++ and these modifications do work on Windows if you use a console that supports colors (I used [ConEmu](https://conemu.github.io/)).
